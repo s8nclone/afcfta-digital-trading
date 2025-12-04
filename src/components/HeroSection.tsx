@@ -1,71 +1,95 @@
 import { Link } from "react-router-dom";
-import {
-  ArrowRight,
-  Globe,
-} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight } from "lucide-react";
+import ParticlesBackground from "@/components/ParticlesBackground";
+
+const heroStats = [
+  { value: "54", label: "African Countries"},
+  { value: "$15.2B+", label: "Market Access" },
+  { value: "$3.4T", label: "GDP Combined" },
+  { value: "24/7", label: "Global Support" },
+];
 
 const HeroSection = () => {
   return (
-    <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-start mb-8">
-          <div className="flex items-center gap-2 px-3 py-1 bg-primary-50 rounded-full">
-            <span className="text-primary font-semibold text-sm">🌍</span>
-            <span className="text-primary font-semibold text-sm">
-              Connecting African Businesses
-            </span>
-          </div>
-        </div>
+    <section className="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-br from-slate-800 via-slate-900 to-black dark:from-black dark:via-gray-900 dark:to-black">
+      {/* Particles Background */}
+      <ParticlesBackground />
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <h1 className="text-5xl sm:text-6xl font-bold mb-6 leading-tight">
+      {/* Cosmic overlay effects */}
+      <div className="absolute inset-0" style={{ zIndex: 2 }}>
+        {/* Nebula effects */}
+        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"></div>
+
+        {/* Grid overlay */}
+        <div className={"absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.02\" fill-rule=\"evenodd\"%3E%3Cpath d=\"m0 40 40-40h20L20 40H0zm40 0V20l20-20h20l-20 20v20z\"/%3E%3C/g%3E%3C/svg%3E')] opacity-30"}></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative" style={{ zIndex: 3 }}>
+        <div className="text-center space-y-8 max-w-5xl mx-auto">
+          <div className="animate-fade-in-up">
+            <Badge variant="secondary" className="w-fit mx-auto bg-green-500/20 text-green-300 hover:bg-green-500/30 transition-colors duration-300 border border-green-500/30 backdrop-blur-sm">
+              Connecting African Businesses
+            </Badge>
+          </div>
+
+          <div className="animate-fade-in-up animation-delay-200">
+            <h1 className="text-5xl sm:text-6xl font-bold mb-6 leading-tight text-white">
               Welcome to the National{" "}
               <span className="text-primary">AfCFTA</span>
               <br />
               <span className="text-primary">Digital Trade Portal</span>
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-lg">
+          </div>
+
+          <div className="animate-fade-in-up animation-delay-400">
+            <p className="text-xl lg:text-2xl text-green-100 leading-relaxed max-w-3xl mx-auto">
               Facilitating digital trade across Africa, connecting Nigerian
               businesses with opportunities under the African Continental Free
               Trade Area.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Link
-                to="/register"
-                className="bg-primary text-primary-foreground px-8 py-3 rounded font-semibold hover:bg-primary-700 transition inline-flex items-center justify-center gap-2"
-              >
-                Get Started
-                <ArrowRight size={20} />
-              </Link>
-              <Link
-                to="/coming-soon"
-                className="border-2 border-primary text-primary px-8 py-3 rounded font-semibold hover:bg-primary-50 transition inline-flex items-center justify-center"
-              >
-                Learn More
-              </Link>
-            </div>
           </div>
-          <div className="bg-primary-100 rounded-2xl p-8 flex flex-col items-center justify-center aspect-square">
-            <Globe className="w-32 h-32 text-primary mb-4" />
-            <p className="text-primary font-semibold text-center">
-              54 African Nations
-            </p>
-          </div>
-        </div>
 
-        <div className="grid md:grid-cols-3 gap-8 border-t border-border pt-12">
-          <div>
-            <div className="text-4xl font-bold text-primary mb-2">54</div>
-            <p className="text-muted-foreground">African Countries</p>
+          <div className="animate-fade-in-up animation-delay-600 flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="text-lg px-8 bg-green-600 hover:bg-green-700 text-white transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25"
+              asChild
+            >
+              <Link to="/register">
+                Get started
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg px-8 border-green-500 text-green-300 hover:bg-green-500/10 hover:text-green-200 transform hover:scale-105 transition-all duration-300"
+            >
+              <Link to="/login">
+                Already Registered?
+              </Link>
+            </Button>
           </div>
-          <div>
-            <div className="text-4xl font-bold text-primary mb-2">1.3B</div>
-            <p className="text-muted-foreground">Market Access</p>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-amber-500 mb-2">$3.4T</div>
-            <p className="text-muted-foreground">GDP Combined</p>
+
+          {/* Hero Stats */}
+          <div className="animate-fade-in-up animation-delay-800 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
+            {heroStats.map((stat, index) => (
+              <div
+                key={index}
+                className="text-center group hover:transform hover:scale-110 transition-all duration-300"
+              >
+                <div className="text-2xl lg:text-4xl font-bold text-green-400 group-hover:text-green-300 transition-colors duration-300">
+                  {stat.value}
+                </div>
+                <div className="text-sm lg:text-base text-green-200">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
