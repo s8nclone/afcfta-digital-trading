@@ -31,7 +31,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8 py-20 bg-white">
+    <section id="contact-section" className="px-4 sm:px-6 lg:px-8 py-20 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12">
           <div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Building2Icon, SearchIcon } from "./Icons";
 
 const QuickActions = () => {
@@ -21,9 +22,11 @@ const QuickActions = () => {
               Register your business, verify your identity, and select your
               industry categories and target countries.
             </p>
-            <button className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:bg-primary-700 transition">
-              Apply Now →
-            </button>
+            <Link to="/register">
+              <button className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:bg-primary-700 transition">
+                Apply Now →
+              </button>
+            </Link>
           </div>
 
           <div className="p-8 border border-border rounded-2xl hover:shadow-lg transition">
@@ -35,9 +38,11 @@ const QuickActions = () => {
               Discover and connect with verified Nigerian businesses open to
               trade under AfCFTA.
             </p>
-            <button className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:bg-primary-700 transition">
-              Browse →
-            </button>
+            <Link to="/coming-soon">
+              <button className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:bg-primary-700 transition">
+                Browse →
+              </button>
+            </Link>
           </div>
         </div>
       </div>

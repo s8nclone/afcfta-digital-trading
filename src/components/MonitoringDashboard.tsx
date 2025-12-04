@@ -3,6 +3,7 @@ import {
   BarChart3,
   FileCheck,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const MonitoringDashboard = () => {
   const items = [
@@ -54,9 +55,11 @@ const MonitoringDashboard = () => {
         </div>
 
         <div className="text-center">
-          <button className="border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition">
-            Access Monitoring Dashboard
-          </button>
+          <Link to="/coming-soon">
+            <button className="border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition">
+              Access Monitoring Dashboard
+            </button>
+          </Link>
         </div>
       </div>
     </section>
